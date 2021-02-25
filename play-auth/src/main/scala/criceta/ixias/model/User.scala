@@ -8,7 +8,6 @@ import java.time.LocalDateTime
 import User._
 case class User(
   id:        Option[Id],   // Id of user
-  name:      Name,         // Name
   email:     EmailAddress, // Email
   updatedAt: LocalDateTime = NOW,
   createdAt: LocalDateTime = NOW
@@ -20,9 +19,6 @@ object User {
   /** Definition of Id type */
   val  Id = the[Identity[Id]]
   type Id = Long @@ User
-
-  /** Name */
-  case class Name(last: String, first: String, kanaLast: String, kanaFirst: String)
 
   /** Value class: Email address
    *
